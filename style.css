@@ -29,6 +29,23 @@ body {
     height: 100%;
 }
 
+.formClima {
+    display: flex;
+    align-items: center;
+}
+
+#cityInput {
+    background: url("img/pesquisa-de-lupa.png") no-repeat right / 11px;
+    background-position: calc(100% - 9px) center;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 500px;
+    padding-left: 8px;
+    border: 0.5px solid #383838;
+    margin-top: 10px;
+
+}
+
 .quadradoCinza {
     display: flex;
     justify-content: space-around;
@@ -84,4 +101,9 @@ body {
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #FAFAFA;
+    color: black;
+}
+
+#consultarBotao {
+    display: none;
 }
