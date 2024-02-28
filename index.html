@@ -76,9 +76,9 @@
 
                     const tempoResult = document.getElementById('climaResult');
                     if (data.Temperatura) {
-                        addUmidade(vento, data.VelocidadeDoVento, "m/s")
+                        addUmidade(vento, data.VelocidadeDoVento, "ms")
                         addUmidade(clima, data.Clima, "")
-                        addUmidade(umidade, data.Umidade, '%')
+                        addUmidade(umidade, data.Umidade, '')
                         addUmidade(temperatura, data.Temperatura, "C°")
                     } else {
                         tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"

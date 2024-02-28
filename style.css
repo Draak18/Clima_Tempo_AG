@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Sofia;
+    src: local(Sofia), url(./fonts/Fontspring-DEMO-SofiaProSoftReg.otf);
+}
+
 body {
     background-color: #E9E9E9;
     display: flex;
@@ -6,6 +11,8 @@ body {
     height: 100vh;
     width: 100%;
     margin: 0;
+    font-family: Sofia;
+    color: #696969;
 }
 
 .quadradoFundo {
@@ -19,6 +26,8 @@ body {
     height: 95vh;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: Sofia;
+    color: #696969;
 }
 
 .quadradoBranco {
@@ -27,11 +36,15 @@ body {
     background-color: #FAFAFA;
     width: 122.5vh;
     height: 100%;
+    font-family: Sofia;
+    color: #696969;
 }
 
 .formClima {
     display: flex;
     align-items: center;
+    font-family: Sofia;
+    color: #696969;
 }
 
 #cityInput {
@@ -44,7 +57,8 @@ body {
     padding-left: 8px;
     border: 1px solid #D9D9D9;
     margin-top: 10px;
-
+    font-family: Sofia;
+    color: #696969;
 }
 
 #consultarBotao {
@@ -59,6 +73,8 @@ body {
     background-color: #D9D9D9;
     width: 88.5vh;
     height: 100%;
+    font-family: Sofia;
+    color: #696969;
 }
 
 .tempoquadrado {
@@ -72,6 +88,8 @@ body {
     height: 43vh;
     border-radius: 50px;
     background-color: #FAFAFA;
+    font-family: Sofia;
+    color: #696969;
 }
 
 .quadradoClima {
@@ -83,16 +101,19 @@ body {
     height: 43vh;
     border-radius: 50px;
     background-color: #FAFAFA;
+    font-family: Sofia;
+    color: #696969;
 }
 
 .quadradoUmidade {
-
     margin-top: 18px;
     margin-left: px;
     width: 35vh;
     height: 43vh;
     border-radius: 50px;
     background-color: #FAFAFA;
+    font-family: Sofia;
+    color: #696969;
 }
 
 .quadradoTemperatura {
@@ -103,4 +124,6 @@ body {
     border-radius: 50px;
     background-color: #FAFAFA;
     color: black;
+    font-family: Sofia;
+    color: #696969;
 }
