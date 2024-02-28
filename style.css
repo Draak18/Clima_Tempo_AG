@@ -8,27 +8,80 @@ body {
     margin: 0;
 }
 
-.quadrado1 {
+.quadradoFundo {
     margin: 22.75px;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     background-color: #FAFAFA;
-    width: 210vh;
+    width: 205vh;
     height: 95vh;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.quadrado2 {
-    background-color: black;
+.quadradoBranco {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #FAFAFA;
+    width: 122.5vh;
+    height: 100%;
 }
 
-.quadrado3 {
-    background-color: blue;
+.quadradoCinza {
+    display: flex;
+    justify-content: space-around;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #D9D9D9;
+    width: 88.5vh;
+    height: 100%;
 }
 
 .tempoquadrado {
     color: white;
+}
+
+.quadradoVento {
+    margin-top: 18px;
+    margin-left: 6,6px;
+    width: 35vh;
+    height: 43vh;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #FAFAFA;
+}
+
+.quadradoClima {
+
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 6,6px;
+    width: 35vh;
+    height: 43vh;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #FAFAFA;
+}
+
+.quadradoUmidade {
+
+    margin-top: 18px;
+    margin-left: px;
+    width: 35vh;
+    height: 43vh;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #FAFAFA;
+}
+
+.quadradoTemperatura {
+    margin-top: 25px;
+    margin-left: 6,6px;
+    width: 35vh;
+    height: 43vh;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #FAFAFA;
 }
