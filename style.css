@@ -1,6 +1,24 @@
 body {
     background-color: #E9E9E9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-.quadrado1{
+
+.quadrado1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
+    width: 210vh;
+    height: 95vh;
+    border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tempoquadrado {
+    color: black;
 }
