@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-.quadrado1 {
+.quadradoFundo {
     margin: 22.75px;
     display: flex;
     text-align: center;
@@ -21,14 +21,22 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.quadrado2 {
-    background-color: black;
+.quadradoBranco {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #FAFAFA;
+    width: 122.5vh;
+    height: 100%;
 }
 
-.quadrado3 {
-    background-color: blue;
+.quadradoCinza {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #D9D9D9;
+    width: 88.5vh;
+    height: 100%;
 }
 
 .tempoquadrado {
-    color: black;
+    color: white;
 }
