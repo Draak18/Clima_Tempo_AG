@@ -20,17 +20,25 @@
                 </form>
             </div>
 
-            
+
         </div>
         <div class="quadradoCinza">
             <div class="quadradoCinzaEsquerda">
-            <div class="quadradoVento">aaaaa</div>
-            <div class="quadradoClima">aaaa</div>
-        </div>
-        <div class="quadradoCinzaDireita">
-            <div class="quadradoUmidade">aaa</div>
-            <div class="quadradoTemperatura">aaaa</div>
-        </div>  
+                <div class="quadradoVento">
+                    <div id="vento"></div>
+                </div>
+                <div class="quadradoClima">
+                    <div id="clima"></div>
+                </div>
+            </div>
+            <div class="quadradoCinzaDireita">
+                <div class="quadradoUmidade">
+                    <div id="umidade"></div>
+                </div>
+                <div class="quadradoTemperatura">
+                    <div id="temperatura"></div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -38,6 +46,15 @@
     <div id="climaResult"> </div>
 
     <script>
+        const vento = document.getElementById("vento")
+        const clima = document.getElementById("clima")
+        const umidade = document.getElementById("umidade")
+        const temperatura = document.getElementById("temperatura")
+
+        function addUmidade(umidade, text, text2) {
+            umidade.innerText = text + text2
+        }
+
 
         document.getElementById('formClima').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -59,12 +76,10 @@
 
                     const tempoResult = document.getElementById('climaResult');
                     if (data.Temperatura) {
-
-                        tempoResult.innerHTML = `Temperatura: ${data.Temperatura}°C <br>
-                            Umidade: ${data.Umidade}% <br>
-                            Velocidade do Vento: ${data.VelocidadeDoVento}m/s <br>
-                            Descrição do Clima: ${data.Clima}`
-
+                        addUmidade(vento, data.VelocidadeDoVento, "m/s")
+                        addUmidade(clima, data.Clima, "")
+                        addUmidade(umidade, data.Umidade, '%')
+                        addUmidade(temperatura, data.Temperatura, "C°")
                     } else {
                         tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"
                     }
