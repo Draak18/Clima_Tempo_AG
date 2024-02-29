@@ -30,7 +30,7 @@ body {
     width: 205vh;
     height: 95vh;
     border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;
     font-family: Sofia;
     color: #696969;
 }
@@ -41,8 +41,6 @@ body {
     background-color: #FAFAFA;
     width: 122.5vh;
     height: 100%;
-    font-family: Sofia;
-    color: #696969;
 }
 
 .formClima {
@@ -75,6 +73,7 @@ body {
 #temperatura1 {
     padding-top: 19vh;
     font-size: 130px;
+    font-family: Sofia;
 }
 
 .cidade {
@@ -83,13 +82,16 @@ body {
     color: #696969;
 }
 
-.horaAtual {
-    display: flex;
-    font-size: 21.5px;
+.dataAtual {
+    position: fixed;
+    top: 860px;
+    right: 810px;
+    font-size: 20px;
     font-family: Sofia;
-    margin-top: 600px;
-    margin-left: 1000px;
+    color: #696969;
+    z-index: 999;
 }
+
 
 .quadradoCinza {
     display: flex;
@@ -99,7 +101,6 @@ body {
     background-color: #D9D9D9;
     width: 88.5vh;
     height: 100%;
-    font-family: Sofia;
     color: #696969;
 }
 
@@ -114,8 +115,7 @@ body {
     height: 43vh;
     border-radius: 50px;
     background-color: #FAFAFA;
-    font-family: Sofia;
-    color: #696969;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
 .quadradoClima {
@@ -127,8 +127,7 @@ body {
     height: 43vh;
     border-radius: 50px;
     background-color: #FAFAFA;
-    font-family: Sofia;
-    color: #696969;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
 .quadradoUmidade {
@@ -138,8 +137,7 @@ body {
     height: 43vh;
     border-radius: 50px;
     background-color: #FAFAFA;
-    font-family: Sofia;
-    color: #696969;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
 .quadradoTemperatura {
@@ -150,6 +148,16 @@ body {
     border-radius: 50px;
     background-color: #FAFAFA;
     color: black;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
+}
+
+
+#vento,
+#clima,
+#umidade,
+#temperatura2 {
+    font-size: 30px;
+    padding-top: 25px;
     font-family: Sofia;
     color: #696969;
 }

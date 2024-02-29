@@ -21,7 +21,7 @@
             </div>
             <div id="temperatura1"></div>
             <div class="cidade"></div>
-            <div class="horaAtual"></div>
+            <div class="dataAtual"></div>
         </div>
         <div class="quadradoCinza">
             <div class="quadradoCinzaEsquerda">
@@ -49,11 +49,11 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-            const horaAtualElement = document.querySelector('.horaAtual');
+            const dataAtualElement = document.querySelector('.dataAtual');
 
             setInterval(() => {
                 const now = new Date();
-                horaAtualElement.textContent = now.toLocaleTimeString('pt-BR');
+                dataAtualElement.textContent = now.toLocaleDateString('pt-BR');
             }, 1000);
         });
 
@@ -92,10 +92,10 @@
                         addUmidade(umidade, data.Umidade, '%')
                         addUmidade(temperatura1, Math.round(data.Temperatura), "C°")
                         addUmidade(temperatura2, Math.round(data.Temperatura), "C°")
-
-                        const formatarCity = city.replace(/\b\w/g, char => char.toUpperCase());
+                        
+                        const formatarCity = novoCity(city);
                         const cidadeElemento = document.querySelector('.cidade');
-                        cidadeElemento.textContent = city.charAt(0).toUpperCase() + city.slice(1);
+                        cidadeElemento.textContent = formatarCity;
                     } else {
                         tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"
                     }
@@ -108,6 +108,19 @@
                 const cidadeElemento = document.getElementById('cidade');
                 cidadeElemento.innerText = data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
             }
+        }
+
+        function novoCity(city) {
+            const palavras = city.split(' ');
+            const excecoes = ['do', 'da', 'de', 'e'];
+
+            for (let i = 0; i < palavras.length; i++) {
+                if (!excecoes.includes(palavras[i].toLowerCase())) {
+                    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1).toLowerCase();
+                }
+            }
+
+            return palavras.join(' ');
         }
 
     </script>
