@@ -84,8 +84,18 @@ body {
 
 .dataAtual {
     position: fixed;
-    top: 860px;
-    right: 810px;
+    top: 400px;
+    right: 135px;
+    font-size: 25px;
+    font-family: Sofia;
+    color: #696969;
+    z-index: 999;
+}
+
+#horaAtual {
+    position: fixed;
+    top: 665px;
+    right: 673px;
     font-size: 20px;
     font-family: Sofia;
     color: #696969;
@@ -166,7 +176,7 @@ body {
     position: fixed;
     top: 200px;
     right: 0px;
-    margin-right: 40git0px;
+    margin-right: 400px;
 }
 
 .imgUmidade {
