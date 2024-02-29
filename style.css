@@ -140,7 +140,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
-.quadradoTemperatura {
+.quadradoData {
     margin-top: 25px;
     margin-left: 6, 6px;
     width: 35vh;
@@ -160,4 +160,32 @@ body {
     padding-top: 25px;
     font-family: Sofia;
     color: #696969;
+}
+
+.imgVento {
+    position: fixed;
+    top: 200px;
+    right: 0px;
+    margin-right: 390px;
+}
+
+.imgUmidade {
+    position: fixed;
+    top: 200px;
+    right: 0px;
+    margin-right: 130px;
+}
+
+.imgData {
+    position: fixed;
+    top: 500px;
+    right: 0px;
+    margin-right: 102px;
+}
+
+.imgClima {
+    position: fixed;
+    top: 500px;
+    right: 0px;
+    margin-right: 390px;
 }

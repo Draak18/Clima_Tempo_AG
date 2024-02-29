@@ -93,9 +93,9 @@ app.get('/climatempo/:cidade', async(req, res) => {
             };
             res.send(weatherData);
         } else {
-            res.status(response.status).send({erro: "Erro ao obter dados metereológicos"});
+            res.status(response.status).send({erro: "Erro ao obter dados metereológicos 1"});
         }
     } catch (error) {
-        res.status(500).send({erro: "Erro ao obter dados metereológicos", error})
+        res.status(500).send({erro: "Erro ao obter dados metereológicos 2", error})
     } 
 });

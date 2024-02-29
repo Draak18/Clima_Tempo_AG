@@ -27,17 +27,33 @@
             <div class="quadradoCinzaEsquerda">
                 <div class="quadradoVento">
                     <div id="vento"></div>
+                    <div>
+                        <img class="imgVento" src="img/wind.png " width=200px>
+                    </div>
                 </div>
                 <div class="quadradoClima">
-                    <div id="clima"></div>
+                    <div id="clima">
+                    </div>
+                        <img class="imgClima" src="" width="150px" id="imagenzinha">
+                    <div>
+
+                    </div>
                 </div>
             </div>
             <div class="quadradoCinzaDireita">
                 <div class="quadradoUmidade">
                     <div id="umidade"></div>
+                    <div>
+                        <img class="imgUmidade" src="img/water.png" width="100px">
+                    </div>
                 </div>
-                <div class="quadradoTemperatura">
-                    <div id="temperatura2"></div>
+                <div class="quadradoData">
+                    <divgi>
+                        <img class="imgData"  scr="img/Agenda.png" width="200px">
+                    </div>
+                    <div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,6 +63,23 @@
     <div id="climaResult"> </div>
 
     <script>
+
+        const imagem = document.getElementById("imagenzinha");
+
+
+        const mostrar = (a, img) => {
+            if (a == "Redemoinhos de Areia/Poeira" || a == "Areia" || a == "Poeira" || a == "Cinzas Vulcânicas" || a == "Céu Limpo" ) {
+                img.src = "img/Sol.png"
+            } else if (a == "Neve" || a == "Neve Leve" || a == "Neve Intensa" || a == "Chuva e Neve Leve" || a == "Chuva e Neve" || a == "Neve e Chuva Leve" || a == "Neve e Chuva" || a == "Neve e Chuva Intensa" || a == "Atmosfera" ) {
+                img.src = "img/Neve.png"
+            } else if (a == "Tempestade" || a == "Tempestade com Chuva Leve" || a == "Tempestade com Chuva" || a == "Tempestade com Chuva Intensa" || a == "Tempestade Leve" || a == "Tempestade" || a == "Tempestade Intensa" || a == "Tempestade Irregular" || a == "Tempestade com Garoa Leve" || a == "Tempestade com Garoa" || a == "Tempestade com Garoa Intensa" || a == "Garoa" || a == "Garoa de Baixa Intensidade" || a == "Garoa de Alta Intensidade" || a == "Chuva Garoando de Baixa Intensidade" || a == "Chuva Garoando" || a == "Chuva Garoando de Alta Intensidade" || a == "Chuva Forte e Garoa" || a == "Chuva Forte e Garoa Intensa" || a == "Garoa Forte" || a == "Chuva" || a == "Chuva Leve" || a == "Chuva Moderada" || a == "Chuva Intensa" || a == "Chuva Muito Intensa"  || a == "Chuva Extrema" || a == "Chuva Congelante" || a == "Chuva de Baixa Intensidade" || a == "Chuva de Alta Intensidade" || a == "Chuva Irregular" || a == "Aguaceiro" || a == "Aguaceiro Leve" ){
+                img.src = "img/Chuva.png"
+            } else if( a == "Névoa" || a == "Fumaça" || a == "Neblina" || a == "Nevoeiro" || a == "Rajadas" || a == "Tornado" || a == "Poucas Nuvens" || a == "Nuvens" || a == "Nuvens Dispersas" || a == "Nuvens Fragmentadas" || a == "Nublado" ){
+                img.src = "img/Nublado.png"
+            }
+        
+        }
+
 
         document.addEventListener('DOMContentLoaded', () => {
             const dataAtualElement = document.querySelector('.dataAtual');
@@ -92,7 +125,9 @@
                         addUmidade(umidade, data.Umidade, '%')
                         addUmidade(temperatura1, Math.round(data.Temperatura), "C°")
                         addUmidade(temperatura2, Math.round(data.Temperatura), "C°")
-                        
+                        mostrar(data.Clima, imagem)
+
+
                         const formatarCity = novoCity(city);
                         const cidadeElemento = document.querySelector('.cidade');
                         cidadeElemento.textContent = formatarCity;
@@ -122,6 +157,9 @@
 
             return palavras.join(' ');
         }
+
+
+
 
     </script>
 
