@@ -8,6 +8,11 @@
     src: local("SofiaRegular"), url("./fonts/Fontspring-DEMO-SofiaProSoftLight.otf");
 }
 
+@font-face {
+    font-family: "CodeLight";
+    src: local("CodeLight"), url("./fonts/SourceCodePro-Regular.ttf");
+}
+
 body {
     background-color: #E9E9E9;
     display: flex;
@@ -51,23 +56,34 @@ body {
 }
 
 #cityInput {
-    background: url("img/pesquisa-de-lupa.png") no-repeat right / 14px;
-    background-position: calc(100% - 13px) center;
-    background-color: transparent;
-    border-radius: 30px;
+    width: 80%;
     height: 25px;
-    width: 750px;
-    padding-left: 12px;
-    padding-bottom: 5.5px;
+    background: transparent;
+    outline: none;
     border: 1px solid #D9D9D9;
-    margin-top: 25px;
+    border-radius: 1.625rem;
+    padding: 0 3.5rem 0 1.5rem;
+    font-size: 1rem;
     font-family: Sofia;
-    font-size: 17px;
     color: #696969;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
 #consultarBotao {
-    display: none;
+    width: 3.5rem;
+    height: 2.8rem;
+    margin-top: 20px;
+    margin-left: -3.5rem;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: Sofia;
+    color: #696969;
+}
+
+#consultarBotao:hover {
+    cursor: pointer;
 }
 
 #temperatura1 {
@@ -77,15 +93,26 @@ body {
 }
 
 .cidade {
-    font-size: 130px;
-    font-family: SofiaRegular;
+    font-size: 57.5px;
+    padding-right: 25px;
+    font-family: CodeLight;
     color: #696969;
 }
 
 .dataAtual {
     position: fixed;
-    top: 860px;
-    right: 810px;
+    top: 410px;
+    right: 98px;
+    font-size: 30px;
+    font-family: Sofia;
+    color: #696969;
+    z-index: 999;
+}
+
+#horaAtual {
+    position: fixed;
+    top: 665px;
+    right: 673px;
     font-size: 20px;
     font-family: Sofia;
     color: #696969;
@@ -154,8 +181,7 @@ body {
 
 #vento,
 #clima,
-#umidade,
-#temperatura2 {
+#umidade {
     font-size: 30px;
     padding-top: 25px;
     font-family: Sofia;
