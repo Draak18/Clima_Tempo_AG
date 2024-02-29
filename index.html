@@ -19,8 +19,9 @@
                     <button type="submit" id="consultarBotao">Consultar</button>
                 </form>
             </div>
-
-
+            <div id="temperatura1"></div>
+            <div class="cidade"></div>
+            <div class="horaAtual"></div>
         </div>
         <div class="quadradoCinza">
             <div class="quadradoCinzaEsquerda">
@@ -36,7 +37,7 @@
                     <div id="umidade"></div>
                 </div>
                 <div class="quadradoTemperatura">
-                    <div id="temperatura"></div>
+                    <div id="temperatura2"></div>
                 </div>
             </div>
         </div>
@@ -46,15 +47,25 @@
     <div id="climaResult"> </div>
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const horaAtualElement = document.querySelector('.horaAtual');
+
+            setInterval(() => {
+                const now = new Date();
+                horaAtualElement.textContent = now.toLocaleTimeString('pt-BR');
+            }, 1000);
+        });
+
         const vento = document.getElementById("vento")
         const clima = document.getElementById("clima")
         const umidade = document.getElementById("umidade")
-        const temperatura = document.getElementById("temperatura")
+        const temperatura1 = document.getElementById("temperatura1")
+        const temperatura2 = document.getElementById("temperatura2")
 
         function addUmidade(umidade, text, text2) {
             umidade.innerText = text + text2
         }
-
 
         document.getElementById('formClima').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -76,16 +87,29 @@
 
                     const tempoResult = document.getElementById('climaResult');
                     if (data.Temperatura) {
-                        addUmidade(vento, data.VelocidadeDoVento, "ms")
+                        addUmidade(vento, data.VelocidadeDoVento, "m/s")
                         addUmidade(clima, data.Clima, "")
-                        addUmidade(umidade, data.Umidade, '')
-                        addUmidade(temperatura, data.Temperatura, "C°")
+                        addUmidade(umidade, data.Umidade, '%')
+                        addUmidade(temperatura1, Math.round(data.Temperatura), "C°")
+                        addUmidade(temperatura2, Math.round(data.Temperatura), "C°")
+
+                        const formatarCity = city.replace(/\b\w/g, char => char.toUpperCase());
+                        const cidadeElemento = document.querySelector('.cidade');
+                        cidadeElemento.textContent = city.charAt(0).toUpperCase() + city.slice(1);
                     } else {
                         tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"
                     }
                 })
                 .catch(error => console.error("Erro ao obter dados!", error));
         }
+
+        if (data.Temperatura) {
+            if (data.Cidade) {
+                const cidadeElemento = document.getElementById('cidade');
+                cidadeElemento.innerText = data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
+            }
+        }
+
     </script>
 
 </body>
