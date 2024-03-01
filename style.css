@@ -205,6 +205,28 @@ body {
   margin-right: 130px;
 }
 
+#umidade,
+#temperatura2 {
+  font-size: 30px;
+  padding-top: 25px;
+  font-family: Sofia;
+  color: #696969;
+}
+
+.imgVento {
+  position: fixed;
+  top: 200px;
+  right: 0px;
+  margin-right: 400px;
+}
+
+.imgUmidade {
+  position: fixed;
+  top: 200px;
+  right: 0px;
+  margin-right: 160px;
+}
+
 .imgData {
   position: fixed;
   top: 500px;
