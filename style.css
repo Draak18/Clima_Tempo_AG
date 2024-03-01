@@ -101,13 +101,23 @@ body {
 }
 
 .dataAtual {
-    position: fixed;
+    /* position: fixed;
     top: 400px;
-    right: 135px;
+    right: 135px; */
     font-size: 25px;
     font-family: Sofia;
     color: #696969;
-    z-index: 999;
+    /* z-index: 999; */
+}
+
+.horaContainer {
+  display: flex;
+  justify-content: flex-end;
+  font-family: Sofia;
+  color: #696969;
+  position: absolute;
+  top: 665px;
+  right: 673px;
 }
 
 .dataAtual,
@@ -132,7 +142,7 @@ body {
 
 .quadradoVento {
     margin-top: 18px;
-    margin-left: 6, 6px;
+    margin-left: 6.6px;
     width: 35vh;
     height: 43vh;
     border-radius: 50px;
@@ -153,7 +163,8 @@ body {
 
 .quadradoUmidade {
     margin-top: 18px;
-    margin-left: px;
+    /*     margin-left: px;
+ */
     width: 35vh;
     height: 43vh;
     border-radius: 50px;
@@ -163,7 +174,7 @@ body {
 
 .quadradoData {
     margin-top: 25px;
-    margin-left: 6, 6px;
+    margin-left: 6.6px;
     width: 35vh;
     height: 43vh;
     border-radius: 50px;
@@ -174,59 +185,27 @@ body {
 
 #vento,
 #clima,
-#umidade {
-  font-size: 25px;
-  padding-top: 25px;
-  font-family: Sofia;
-  color: #696969;
-}
-
-.imgVento {
-  position: fixed;
-  top: 200px;
-  right: 0px;
-  margin-right: 390px;
-}
-
-.imgUmidade {
-  position: fixed;
-  top: 200px;
-  right: 0px;
-  margin-right: 130px;
-}
-
 #umidade,
 #temperatura2 {
     font-size: 30px;
+    margin-top: 0;
     padding-top: 25px;
     font-family: Sofia;
     color: #696969;
 }
 
-.imgVento {
-    position: fixed;
-    top: 200px;
-    right: 0px;
-    margin-right: 400px;
+
+.quadrados img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 32px;
 }
 
-.imgUmidade {
-    position: fixed;
-    top: 200px;
-    right: 0px;
-    margin-right: 160px;
+.quadrados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.imgData {
-    position: fixed;
-    top: 500px;
-    right: 0px;
-    margin-right: 102px;
-}
-
-.imgClima {
-    position: fixed;
-    top: 500px;
-    right: 0px;
-    margin-right: 390px;
-}
+@media screen {}
