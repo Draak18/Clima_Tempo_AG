@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Consulta do Clima</title>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <div class="quadradoFundo">
         <div class="quadradoBranco">
             <div class="tempoquadrado">
@@ -28,112 +28,118 @@
             <div id="temperatura1"></div>
             <div class="cidade"></div>
             <div id="horaAtual"></div>
-            <div class="quadradoTemperatura">
-            </div>
         </div>
         <div class="quadradoCinza">
             <div class="quadradoCinzaEsquerda">
-                <div class="quadradoVento quadrados">
+                <div class="quadradoVento">
                     <div id="vento"></div>
                     <div>
                         <img class="imgVento" src="img/wind.png " width=200px>
                     </div>
                 </div>
-                <div class="quadradoClima quadrados">
+                <div class="quadradoClima">
                     <div id="clima">
                     </div>
-                    <img class="imgClima" src="" id="imagenzinha">
+                        <img class="imgClima" src="" width="150px" id="imagenzinha">
+                    <div>
+
+                    </div>
                 </div>
             </div>
             <div class="quadradoCinzaDireita">
-                <div class="quadradoUmidade quadrados">
+                <div class="quadradoUmidade">
                     <div id="umidade"></div>
                     <div>
                         <img class="imgUmidade" src="img/water.png" width="100px">
                     </div>
                 </div>
-                <div class="quadradoData quadrados">
-                    <div class="dataAtual"></div>
-
+                <div class="quadradoData">
                     <div>
-                        <img class="imgData" src="img/Agenda.png" width="200px">
+                        <img class="imgData"  scr="img/Agenda.png" width="200px">
                     </div>
-                </div>
+                    <div>
 
+                    </div>
+                    <div class="dataAtual"></div>
+                </div>
+                <div class="quadradoTemperatura">
+                </div>
             </div>
         </div>
-
+        <div class="quadradoTemperatura"></div>
+      </div>
     </div>
 
-    <div id="climaResult"> </div>
+    <div id="climaResult"></div>
 
     <script>
-
-        const imagem = document.getElementById("imagenzinha");
-
+      const imagem = document.getElementById("imagenzinha");
 
         const mostrar = (a, img) => {
-            if (a == "Redemoinhos de Areia/Poeira" || a == "Areia" || a == "Poeira" || a == "Cinzas Vulcânicas" || a == "Céu Limpo") {
+            if (a == "Redemoinhos de Areia/Poeira" || a == "Areia" || a == "Poeira" || a == "Cinzas Vulcânicas" || a == "Céu Limpo" ) {
                 img.src = "img/Sol.png"
-            } else if (a == "Neve" || a == "Neve Leve" || a == "Neve Intensa" || a == "Chuva e Neve Leve" || a == "Chuva e Neve" || a == "Neve e Chuva Leve" || a == "Neve e Chuva" || a == "Neve e Chuva Intensa" || a == "Atmosfera") {
+            } else if (a == "Neve" || a == "Neve Leve" || a == "Neve Intensa" || a == "Chuva e Neve Leve" || a == "Chuva e Neve" || a == "Neve e Chuva Leve" || a == "Neve e Chuva" || a == "Neve e Chuva Intensa" || a == "Atmosfera" ) {
                 img.src = "img/Neve.png"
-            } else if (a == "Tempestade" || a == "Tempestade com Chuva Leve" || a == "Tempestade com Chuva" || a == "Tempestade com Chuva Intensa" || a == "Tempestade Leve" || a == "Tempestade" || a == "Tempestade Intensa" || a == "Tempestade Irregular" || a == "Tempestade com Garoa Leve" || a == "Tempestade com Garoa" || a == "Tempestade com Garoa Intensa" || a == "Garoa" || a == "Garoa de Baixa Intensidade" || a == "Garoa de Alta Intensidade" || a == "Chuva Garoando de Baixa Intensidade" || a == "Chuva Garoando" || a == "Chuva Garoando de Alta Intensidade" || a == "Chuva Forte e Garoa" || a == "Chuva Forte e Garoa Intensa" || a == "Garoa Forte" || a == "Chuva" || a == "Chuva Leve" || a == "Chuva Moderada" || a == "Chuva Intensa" || a == "Chuva Muito Intensa" || a == "Chuva Extrema" || a == "Chuva Congelante" || a == "Chuva de Baixa Intensidade" || a == "Chuva de Alta Intensidade" || a == "Chuva Irregular" || a == "Aguaceiro" || a == "Aguaceiro Leve") {
+            } else if (a == "Tempestade" || a == "Tempestade com Chuva Leve" || a == "Tempestade com Chuva" || a == "Tempestade com Chuva Intensa" || a == "Tempestade Leve" || a == "Tempestade" || a == "Tempestade Intensa" || a == "Tempestade Irregular" || a == "Tempestade com Garoa Leve" || a == "Tempestade com Garoa" || a == "Tempestade com Garoa Intensa" || a == "Garoa" || a == "Garoa de Baixa Intensidade" || a == "Garoa de Alta Intensidade" || a == "Chuva Garoando de Baixa Intensidade" || a == "Chuva Garoando" || a == "Chuva Garoando de Alta Intensidade" || a == "Chuva Forte e Garoa" || a == "Chuva Forte e Garoa Intensa" || a == "Garoa Forte" || a == "Chuva" || a == "Chuva Leve" || a == "Chuva Moderada" || a == "Chuva Intensa" || a == "Chuva Muito Intensa"  || a == "Chuva Extrema" || a == "Chuva Congelante" || a == "Chuva de Baixa Intensidade" || a == "Chuva de Alta Intensidade" || a == "Chuva Irregular" || a == "Aguaceiro" || a == "Aguaceiro Leve" ){
                 img.src = "img/Chuva.png"
-            } else if (a == "Névoa" || a == "Fumaça" || a == "Neblina" || a == "Nevoeiro" || a == "Rajadas" || a == "Tornado" || a == "Poucas Nuvens" || a == "Nuvens" || a == "Nuvens Dispersas" || a == "Nuvens Fragmentadas" || a == "Nublado") {
+            } else if( a == "Névoa" || a == "Fumaça" || a == "Neblina" || a == "Nevoeiro" || a == "Rajadas" || a == "Tornado" || a == "Poucas Nuvens" || a == "Nuvens" || a == "Nuvens Dispersas" || a == "Nuvens Fragmentadas" || a == "Nublado" ){
                 img.src = "img/Nublado.png"
             }
-
+        
         }
 
 
         document.addEventListener('DOMContentLoaded', () => {
             const dataAtualElement = document.querySelector('.dataAtual');
 
-            setInterval(() => {
-                const dia = new Date();
-                dataAtualElement.textContent = dia.toLocaleDateString('pt-BR');
-            }, 1000);
+        setInterval(() => {
+          const dia = new Date();
+          dataAtualElement.textContent = dia.toLocaleDateString("pt-BR");
+        }, 1000);
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const horaAtualElement = document.getElementById("horaAtual");
+
+        setInterval(() => {
+          const agora = new Date();
+          const hora = agora.getHours();
+          const minutos = agora.getMinutes();
+          const segundos = agora.getSeconds();
+
+          const horaFormatada = hora < 10 ? `0${hora}` : hora;
+          const minutosFormatados = minutos < 10 ? `0${minutos}` : minutos;
+          const segundosFormatados = segundos < 10 ? `0${segundos}` : segundos;
+
+          const horarioAtual = `${horaFormatada}:${minutosFormatados}:${segundosFormatados}`;
+
+          horaAtualElement.textContent = horarioAtual;
+        }, 1000);
+      });
+
+      const vento = document.getElementById("vento");
+      const clima = document.getElementById("clima");
+      const umidade = document.getElementById("umidade");
+      const temperatura1 = document.getElementById("temperatura1");
+
+      function addUmidade(umidade, text, text2) {
+        umidade.innerText = text + text2;
+      }
+
+      document
+        .getElementById("formClima")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          consultarClima();
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const horaAtualElement = document.getElementById('horaAtual');
-
-            setInterval(() => {
-                const agora = new Date();
-                const hora = agora.getHours();
-                const minutos = agora.getMinutes();
-                const segundos = agora.getSeconds();
-
-                const horaFormatada = hora < 10 ? `0${hora}` : hora;
-                const minutosFormatados = minutos < 10 ? `0${minutos}` : minutos;
-                const segundosFormatados = segundos < 10 ? `0${segundos}` : segundos;
-
-                const horarioAtual = `${horaFormatada}:${minutosFormatados}:${segundosFormatados}`;
-
-                horaAtualElement.textContent = horarioAtual;
-            }, 1000);
-        });
-
-
-        const vento = document.getElementById("vento")
-        const clima = document.getElementById("clima")
-        const umidade = document.getElementById("umidade")
-        const temperatura1 = document.getElementById("temperatura1")
-
-        function addUmidade(umidade, text, text2) {
-            umidade.innerText = text + text2
-        }
-
-        document.getElementById('formClima').addEventListener('submit', function (event) {
+      document
+        .getElementById("cityInput")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
             event.preventDefault();
             consultarClima();
-        })
-
-        document.getElementById('cityInput').addEventListener('keypress', function (event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                consultarClima();
-            }
+          }
         });
 
         function consultarClima() {
@@ -148,43 +154,39 @@
                         addUmidade(clima, data.Clima, "")
                         addUmidade(umidade, data.Umidade, '%')
                         addUmidade(temperatura1, Math.round(data.Temperatura), "C°")
-                        mostrar(data.Clima, imagem)
 
-                        const formatarCity = novoCity(city);
-                        const cidadeElemento = document.querySelector('.cidade');
-                        cidadeElemento.textContent = formatarCity;
-                    } else {
-                        tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"
-                    }
-                })
-                .catch(error => console.error("Erro ao obter dados!", error));
-        }
-
-        if (data.Temperatura) {
-            if (data.Cidade) {
-                const cidadeElemento = document.getElementById('cidade');
-                cidadeElemento.innerText = data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
+              const formatarCity = novoCity(city);
+              const cidadeElemento = document.querySelector(".cidade");
+              cidadeElemento.textContent = formatarCity;
+            } else {
+              tempoResult.innerHTML = "Erro ao obter dados do metereológicos!";
             }
+          })
+          .catch((error) => console.error("Erro ao obter dados!", error));
+      }
+
+      if (data.Temperatura) {
+        if (data.Cidade) {
+          const cidadeElemento = document.getElementById("cidade");
+          cidadeElemento.innerText =
+            data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
+        }
+      }
+
+      function novoCity(city) {
+        const palavras = city.split(" ");
+        const excecoes = ["do", "da", "de", "e"];
+
+        for (let i = 0; i < palavras.length; i++) {
+          if (!excecoes.includes(palavras[i].toLowerCase())) {
+            palavras[i] =
+              palavras[i].charAt(0).toUpperCase() +
+              palavras[i].slice(1).toLowerCase();
+          }
         }
 
-        function novoCity(city) {
-            const palavras = city.split(' ');
-            const excecoes = ['do', 'da', 'de', 'e'];
-
-            for (let i = 0; i < palavras.length; i++) {
-                if (!excecoes.includes(palavras[i].toLowerCase())) {
-                    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1).toLowerCase();
-                }
-            }
-
-            return palavras.join(' ');
-        }
-
-
-
-
+        return palavras.join(" ");
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
