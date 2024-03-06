@@ -67,9 +67,6 @@
     <script>
         const imagem = document.getElementById("imagenzinha");
 
-        const imagem = document.getElementById("imagenzinha");
-
-
         const mostrar = (a, img) => {
             if (a == "Redemoinhos de Areia/Poeira" || a == "Areia" || a == "Poeira" || a == "Cinzas Vulcânicas" || a == "Céu Limpo") {
                 img.src = "img/Sol.png"
@@ -162,27 +159,19 @@
                         } else {
                             tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"
                         }
-                    })
+                    }
+                })
                 .catch(error => console.error("Erro ao obter dados!", error));
         }
 
-        if (data.Temperatura) {
-            if (data.Cidade) {
-                const cidadeElemento = document.getElementById('cidade');
-                cidadeElemento.innerText = data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
-            }
-        }
-          .catch ((error) => console.error("Erro ao obter dados!", error));
-      }
 
-
-        if (data.Temperatura) {
-            if (data.Cidade) {
-                const cidadeElemento = document.getElementById("cidade");
-                cidadeElemento.innerText =
-                    data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
-            }
-        }
+        // if (data.Temperatura) {
+        //     if (data.Cidade) {
+        //         const cidadeElemento = document.getElementById("cidade");
+        //         cidadeElemento.innerText =
+        //             data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
+        //     }
+        // }
 
         function novoCity(city) {
             const palavras = city.split(" ");
