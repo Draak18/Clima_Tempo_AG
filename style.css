@@ -127,6 +127,7 @@ body {
 }
 
 .quadradoVento {
+  justify-content: center;
   margin-top: 18px;
   margin-left: 6.6px;
   width: 35vh;
@@ -148,6 +149,7 @@ body {
 }
 
 .quadradoUmidade {
+  justify-content: center;
   margin-top: 18px;
   width: 35vh;
   height: 43vh;
@@ -157,6 +159,7 @@ body {
 }
 
 .quadradoData {
+  justify-content: center;
   margin-top: 25px;
   margin-left: 6.6px;
   width: 35vh;
