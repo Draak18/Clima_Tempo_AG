@@ -213,11 +213,68 @@
               addUmidade(umidade, data.Umidade, "%");
               addUmidade(temperatura1, Math.round(data.Temperatura), "C°");
 
-              const formatarCity = novoCity(city);
-              const cidadeElemento = document.querySelector(".cidade");
-              cidadeElemento.textContent = formatarCity;
-            } else {
-              tempoResult.innerHTML = "Erro ao obter dados do metereológicos!";
+        function addUmidade(umidade, text, text2) {
+            umidade.innerText = text + text2;
+        }
+
+        document
+            .getElementById("formClima")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+                consultarClima();
+            });
+
+        document
+            .getElementById("cityInput")
+            .addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    consultarClima();
+                }
+            });
+
+        function consultarClima() {
+            const city = document.getElementById("cityInput").value;
+            fetch(`http://localhost:3000/climatempo/${city}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    const tempoResult = document.getElementById("climaResult");
+                    if (data.Temperatura) {
+                        addUmidade(vento, data.VelocidadeDoVento, "m/s");
+                        addUmidade(clima, data.Clima, "");
+                        addUmidade(umidade, data.Umidade, "%");
+                        addUmidade(temperatura1, Math.round(data.Temperatura), "C°");
+
+                        const tempoResult = document.getElementById('climaResult');
+                        if (data.Temperatura) {
+                            addUmidade(vento, data.VelocidadeDoVento, "m/s")
+                            addUmidade(clima, data.Clima, "")
+                            addUmidade(umidade, data.Umidade, '%')
+                            addUmidade(temperatura1, Math.round(data.Temperatura), "C°")
+                            mostrar(data.Clima, imagem)
+
+                            const formatarCity = novoCity(city);
+                            const cidadeElemento = document.querySelector('.cidade');
+                            cidadeElemento.textContent = formatarCity;
+                        } else {
+                            tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"
+                        }
+                    }
+                })
+                .catch(error => console.error("Erro ao obter dados!", error));
+        }
+
+
+        function novoCity(city) {
+            const palavras = city.split(" ");
+            const excecoes = ["do", "da", "de", "e"];
+
+            for (let i = 0; i < palavras.length; i++) {
+                if (!excecoes.includes(palavras[i].toLowerCase())) {
+                    palavras[i] =
+                        palavras[i].charAt(0).toUpperCase() +
+                        palavras[i].slice(1).toLowerCase();
+                }
             }
           })
           .catch((error) => console.error("Erro ao obter dados!", error));
