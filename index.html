@@ -32,41 +32,37 @@
         </div>
         <div id="temperatura1"></div>
         <div class="cidade"></div>
-        <div class="horaContainer">
-          <div id="horaAtual"></div>
-        </div>
-        <div class="dataContainer">
-          <div class="dataAtual"></div>
-        </div>
+        <div id="horaAtual"></div>
+        <div class="quadradoTemperatura"></div>
       </div>
       <div class="quadradoCinza">
         <div class="quadradoCinzaEsquerda">
-          <div class="quadradoVento">
+          <div class="quadradoVento quadrados">
             <div id="vento"></div>
             <div>
               <img class="imgVento" src="img/wind.png " width="200px" />
             </div>
           </div>
-          <div class="quadradoClima">
+          <div class="quadradoClima quadrados">
             <div id="clima"></div>
-            <img class="imgClima" src="" width="150px" id="imagenzinha" />
-            <div></div>
+            <img class="imgClima" src="" id="imagenzinha" />
           </div>
         </div>
         <div class="quadradoCinzaDireita">
-          <div class="quadradoUmidade">
+          <div class="quadradoUmidade quadrados">
             <div id="umidade"></div>
             <div>
               <img class="imgUmidade" src="img/water.png" width="100px" />
             </div>
           </div>
-          <div class="quadradoData">
+          <div class="quadradoData quadrados">
+            <div class="dataAtual"></div>
+
             <div>
               <img class="imgData" src="img/Agenda.png" width="200px" />
             </div>
           </div>
         </div>
-        <div class="quadradoTemperatura"></div>
       </div>
     </div>
 
@@ -213,79 +209,24 @@
               addUmidade(umidade, data.Umidade, "%");
               addUmidade(temperatura1, Math.round(data.Temperatura), "C°");
 
-        function addUmidade(umidade, text, text2) {
-            umidade.innerText = text + text2;
-        }
+              const tempoResult = document.getElementById("climaResult");
+              if (data.Temperatura) {
+                addUmidade(vento, data.VelocidadeDoVento, "m/s");
+                addUmidade(clima, data.Clima, "");
+                addUmidade(umidade, data.Umidade, "%");
+                addUmidade(temperatura1, Math.round(data.Temperatura), "C°");
+                mostrar(data.Clima, imagem);
 
-        document
-            .getElementById("formClima")
-            .addEventListener("submit", function (event) {
-                event.preventDefault();
-                consultarClima();
-            });
-
-        document
-            .getElementById("cityInput")
-            .addEventListener("keypress", function (event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    consultarClima();
-                }
-            });
-
-        function consultarClima() {
-            const city = document.getElementById("cityInput").value;
-            fetch(`http://localhost:3000/climatempo/${city}`)
-                .then((response) => response.json())
-                .then((data) => {
-                    const tempoResult = document.getElementById("climaResult");
-                    if (data.Temperatura) {
-                        addUmidade(vento, data.VelocidadeDoVento, "m/s");
-                        addUmidade(clima, data.Clima, "");
-                        addUmidade(umidade, data.Umidade, "%");
-                        addUmidade(temperatura1, Math.round(data.Temperatura), "C°");
-
-                        const tempoResult = document.getElementById('climaResult');
-                        if (data.Temperatura) {
-                            addUmidade(vento, data.VelocidadeDoVento, "m/s")
-                            addUmidade(clima, data.Clima, "")
-                            addUmidade(umidade, data.Umidade, '%')
-                            addUmidade(temperatura1, Math.round(data.Temperatura), "C°")
-                            mostrar(data.Clima, imagem)
-
-                            const formatarCity = novoCity(city);
-                            const cidadeElemento = document.querySelector('.cidade');
-                            cidadeElemento.textContent = formatarCity;
-                        } else {
-                            tempoResult.innerHTML = "Erro ao obter dados do metereológicos!"
-                        }
-                    }
-                })
-                .catch(error => console.error("Erro ao obter dados!", error));
-        }
-
-
-        function novoCity(city) {
-            const palavras = city.split(" ");
-            const excecoes = ["do", "da", "de", "e"];
-
-            for (let i = 0; i < palavras.length; i++) {
-                if (!excecoes.includes(palavras[i].toLowerCase())) {
-                    palavras[i] =
-                        palavras[i].charAt(0).toUpperCase() +
-                        palavras[i].slice(1).toLowerCase();
-                }
+                const formatarCity = novoCity(city);
+                const cidadeElemento = document.querySelector(".cidade");
+                cidadeElemento.textContent = formatarCity;
+              } else {
+                tempoResult.innerHTML =
+                  "Erro ao obter dados do metereológicos!";
+              }
             }
           })
           .catch((error) => console.error("Erro ao obter dados!", error));
-      }
-
-      if (data.Temperatura) {
-        if (data.Cidade) {
-          const cidadeElemento = document.getElementById("cidade");
-          cidadeElemento.innerText =
-            data.Cidade.charAt(0).toUpperCase() + data.Cidade.slice(1);
-        }
       }
 
       function novoCity(city) {
