@@ -142,6 +142,7 @@ body {
   width: 35vh;
   height: 43vh;
   border-radius: 50px;
+  background-color: #FAFAFA;
   background-color: #fafafa;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
@@ -164,6 +165,12 @@ body {
   height: 43vh;
   border-radius: 50px;
   background-color: #FAFAFA;
+  justify-content: center;
+  margin-top: 18px;
+  width: 35vh;
+  height: 43vh;
+  border-radius: 50px;
+  background-color: #fafafa;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
@@ -174,7 +181,7 @@ body {
   width: 35vh;
   height: 43vh;
   border-radius: 50px;
-  
+  background-color: #FAFAFA;
   background-color: #fafafa;
   color: black;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
@@ -217,4 +224,6 @@ body {
   .img {
     width: 20px;
   }
+}
+@media screen {
 }
