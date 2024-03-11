@@ -110,14 +110,12 @@ body {
 .horaContainer {
   display: flex;
   justify-content: flex-end;
+  font-size: 25px;
   font-family: Sofia;
   color: #696969;
-  position: absolute;
-  top: 665px;
-  right: 673px;
+  padding-top: 25px;
 }
 
-.dataAtual,
 #horaAtual {
   font-size: 25px;
 }
@@ -138,12 +136,13 @@ body {
 }
 
 .quadradoVento {
+  justify-content: center;
   margin-top: 18px;
   margin-left: 6.6px;
   width: 35vh;
   height: 43vh;
   border-radius: 50px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
@@ -169,24 +168,29 @@ body {
 }
 
 .quadradoData {
+  justify-content: center;
   margin-top: 25px;
   margin-left: 6.6px;
   width: 35vh;
   height: 43vh;
   border-radius: 50px;
-  background-color: #FAFAFA;
+  
+  background-color: #fafafa;
   color: black;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
 .txt-resp {
+#vento,
+#clima,
+#umidade,
+#temperatura2 {
   font-size: 30px;
   margin-top: 0;
   padding-top: 25px;
   font-family: Sofia;
   color: #696969;
 }
-
 
 .quadrados img {
   max-width: 150px;
