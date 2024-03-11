@@ -95,19 +95,16 @@ body {
 
 .cidade {
   font-size: 57.5px;
-  padding-right: 25px;
   font-family: CodeLight;
   color: #696969;
 }
 
 .dataAtual {
-    /* position: fixed;
-    top: 400px;
-    right: 135px; */
-    font-size: 25px;
-    font-family: Sofia;
-    color: #696969;
-    /* z-index: 999; */
+
+  font-size: 25px;
+  font-family: Sofia;
+  color: #696969;
+
 }
 
 .horaContainer {
@@ -141,13 +138,13 @@ body {
 }
 
 .quadradoVento {
-    margin-top: 18px;
-    margin-left: 6.6px;
-    width: 35vh;
-    height: 43vh;
-    border-radius: 50px;
-    background-color: #FAFAFA;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
+  margin-top: 18px;
+  margin-left: 6.6px;
+  width: 35vh;
+  height: 43vh;
+  border-radius: 50px;
+  background-color: #FAFAFA;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
 .quadradoClima {
@@ -162,50 +159,58 @@ body {
 }
 
 .quadradoUmidade {
-    margin-top: 18px;
-    /*     margin-left: px;
- */
-    width: 35vh;
-    height: 43vh;
-    border-radius: 50px;
-    background-color: #FAFAFA;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
+  margin-top: 18px;
+
+  width: 35vh;
+  height: 43vh;
+  border-radius: 50px;
+  background-color: #FAFAFA;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
 .quadradoData {
-    margin-top: 25px;
-    margin-left: 6.6px;
-    width: 35vh;
-    height: 43vh;
-    border-radius: 50px;
-    background-color: #FAFAFA;
-    color: black;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
+  margin-top: 25px;
+  margin-left: 6.6px;
+  width: 35vh;
+  height: 43vh;
+  border-radius: 50px;
+  background-color: #FAFAFA;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 12px;
 }
 
-#vento,
-#clima,
-#umidade,
-#temperatura2 {
-    font-size: 30px;
-    margin-top: 0;
-    padding-top: 25px;
-    font-family: Sofia;
-    color: #696969;
+.txt-resp {
+  font-size: 30px;
+  margin-top: 0;
+  padding-top: 25px;
+  font-family: Sofia;
+  color: #696969;
 }
 
 
 .quadrados img {
-    max-width: 150px;
-    max-height: 150px;
-    margin-bottom: 32px;
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 32px;
 }
 
 .quadrados {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media screen {}
+@media screen and (max-width: 700px) {
+  .txt-resp {
+    font-size: 14px;
+  }
+
+  .cidade {
+    font-size: 24px;
+  }
+
+  .img {
+    width: 20px;
+  }
+}
