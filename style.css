@@ -49,6 +49,17 @@ body {
   height: 100%;
 }
 
+.quadradoCinza {
+  display: flex;
+  justify-content: space-around;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #d9d9d9;
+  width: 88.5vh;
+  height: 100%;
+  color: #696969;
+}
+
 .formClima {
   display: flex;
   align-items: center;
@@ -95,6 +106,7 @@ body {
   font-family: Sofia;
   height: 80vh;
   user-select: none;
+  margin-top: 0;
 }
 
 .cidade {
@@ -119,17 +131,6 @@ body {
   justify-content: flex-end;
   padding-right: 1.25rem;
   user-select: none;
-}
-
-.quadradoCinza {
-  display: flex;
-  justify-content: space-around;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-color: #d9d9d9;
-  width: 88.5vh;
-  height: 100%;
-  color: #696969;
 }
 
 .tempoquadrado {
@@ -207,13 +208,46 @@ body {
     font-size: 18px;
   }
   .quadradoFundo {
-    width: 168vh;
+    width: 180vh;
     height: 95vh;
   }
   .quadradoBranco {
     width: 100vh;
   }
+
+  #horaAtual {
+    margin-top: -1vh;
+  }
 }
 
 @media screen and (max-width: 640px) {
+  body {
+    width: auto;
+    height: 175vh;
+  }
+  .quadradoFundo {
+    width: 98vh;
+    height: 170vh;
+    flex-direction: column;
+  }
+
+  .quadradoBranco {
+    width: 98vh;
+    height: 75vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0;
+  }
+
+  .quadradoCinza {
+    width: 98vh;
+    height: 95vh;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  #horaAtual {
+    margin-top: -22vh;
+  }
 }

@@ -199,7 +199,13 @@
           }
         });
 
-      function telaComputador() {
+      function telaDesktop() {
+        document.getElementById("temperatura1").style.height = "auto";
+        document.getElementById("temperatura1").style.marginTop = "19vh";
+        document.getElementById("cidade").style.height = "37.5vh";
+      }
+
+      function telaNotebook() {
         document.getElementById("temperatura1").style.height = "auto";
         document.getElementById("temperatura1").style.marginTop = "19vh";
         document.getElementById("cidade").style.height = "37.5vh";
@@ -207,14 +213,15 @@
 
       function telaTablet() {
         document.getElementById("temperatura1").style.height = "auto";
-        document.getElementById("temperatura1").style.marginTop = "19vh";
+        document.getElementById("temperatura1").style.marginTop = "17.2vh";
         document.getElementById("cidade").style.height = "36vh";
       }
 
       function telaMobile() {
         document.getElementById("temperatura1").style.height = "auto";
-        document.getElementById("temperatura1").style.marginTop = "19vh";
         document.getElementById("cidade").style.height = "36vh";
+        document.getElementById("temperatura1").style.marginTop = "5.4vh";
+        document.getElementById("horaAtual").style.marginTop = "-10vh";
       }
 
       function consultarClima() {
@@ -234,15 +241,14 @@
               const cidadeElemento = document.querySelector(".cidade");
               cidadeElemento.textContent = formatarCity;
 
-              const tela1200 = window.matchMedia("(max-width: 1200px)");
-              const tela640 = window.matchMedia("(max-width: 640px)");
-
-              if (tela1200.matches) {
-                telaTablet();
-              } else if (tela640.matches) {
+              if (window.innerWidth <= 640) {
                 telaMobile();
+              } else if (window.innerWidth <= 1200) {
+                telaTablet();
+              } else if (window.innerWidth <= 1920) {
+                telaNotebook();
               } else {
-                telaComputador();
+                telaDesktop();
               }
             } else {
               tempoResult.innerHTML = "Erro ao obter dados do metereológicos!";
