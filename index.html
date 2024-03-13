@@ -199,6 +199,24 @@
           }
         });
 
+      function telaComputador() {
+        document.getElementById("temperatura1").style.height = "auto";
+        document.getElementById("temperatura1").style.marginTop = "19vh";
+        document.getElementById("cidade").style.height = "37.5vh";
+      }
+
+      function telaTablet() {
+        document.getElementById("temperatura1").style.height = "auto";
+        document.getElementById("temperatura1").style.marginTop = "19vh";
+        document.getElementById("cidade").style.height = "36vh";
+      }
+
+      function telaMobile() {
+        document.getElementById("temperatura1").style.height = "auto";
+        document.getElementById("temperatura1").style.marginTop = "19vh";
+        document.getElementById("cidade").style.height = "36vh";
+      }
+
       function consultarClima() {
         const city = document.getElementById("cityInput").value;
         fetch(`http://localhost:3000/climatempo/${city}`)
@@ -215,9 +233,17 @@
               const formatarCity = novoCity(city);
               const cidadeElemento = document.querySelector(".cidade");
               cidadeElemento.textContent = formatarCity;
-              document.getElementById("temperatura1").style.height = "auto";
-              document.getElementById("temperatura1").style.marginTop = "19vh";
-              document.getElementById("cidade").style.height = "37.5vh";
+
+              const tela1200 = window.matchMedia("(max-width: 1200px)");
+              const tela640 = window.matchMedia("(max-width: 640px)");
+
+              if (tela1200.matches) {
+                telaTablet();
+              } else if (tela640.matches) {
+                telaMobile();
+              } else {
+                telaComputador();
+              }
             } else {
               tempoResult.innerHTML = "Erro ao obter dados do metereológicos!";
             }
